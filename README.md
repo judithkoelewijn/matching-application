@@ -1,16 +1,16 @@
 # matching-application
 Repository project Tech matching application
 
-##Table of contents
+## H2 Table of contents
 
 
-#Installation
+## H2 Installation
 
 
-#Visuals / examples
+## H2 Visuals/Examples
 
 
-#License
+## H2 License
 
 
-#Contributers
+## H2 Contributers
