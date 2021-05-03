@@ -13,13 +13,17 @@ app.set('view engine', 'handlebars');
 
 
 
+
 app.get('/', (req, res) => {
     res.render('index');
 });
 
 app.get('/about', (req, res) => {
-    res.render('about', { title: 'Test about me title' });
+    res.render('about', { title: 'Test about title' , name: 'Judith Koelewijn' , age: '18'});
 })
+
+
+
 
 app.use(function(req,res, next) {
 
@@ -34,4 +38,5 @@ app.get('/home', (req, res) => {
 app.listen(2910, () => {
     console.log('Server is at point 2910');
 });
+
 
