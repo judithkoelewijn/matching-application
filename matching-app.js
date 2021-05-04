@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/about', (req, res) => {
-    res.render('about', { title: 'Test about title' , name: 'Judith Koelewijn' , age: '18'});
+    res.render('about', { title: 'Test about title' , name: 'Judith Koelewijn'});
 })
 
 

@@ -3,15 +3,18 @@
     <h3>About!!!</h3>
     <p>Welcome to my matching application</p>
     
+    <ul>
     <form id="contact-form" method="POST" action="/about">
-        <label for="who"> Who do you want to contact?</label>
-        <input type="text" name="who" value={{who}}>
-        <label for="department"> What is your message?</label>
-        <input type="text" name="department" value={{department}}>
+     <li> <label for="who"> Who do you want to contact?</label>
+        <input type="text" name="who" value={{who}}></li>  
+       <li> <label for="department"> What is your message?</label>
+        <input type="text" name="message" value={{message}}> </li>
+         <li><label for="age"> What is your current age?</label>
+        <input type="text" name="age" value={{age}}></li>
         <input type="submit" value="submit" />
       
     
     
     
     </form>
-    
+    </ul>
