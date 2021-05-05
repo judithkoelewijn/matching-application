@@ -14,17 +14,23 @@ Voor het installeren van de feature moet je de volgende stappen doorlopen:
 1. De github page clonen voor het verkrijgen van de folders:
 
 ```https://github.com/judithkoelewijn/matching-application.git```
+
 2. NPM installeren voor de gebruikte packages:
 
 ```npm install```
+
 3. Vervolgens het starten van de server via npm:
 
 ```npm start```
 
 ##  Licensie
 
+Benodigde licensie: MIT licensie : https://choosealicense.com (MIT)
 
 ##  Voorbelden en visuals
-
+![scherm-1](https://user-images.githubusercontent.com/74096730/117139377-7858d580-adac-11eb-9f94-1b3c5f1681df.png)
+![scherm-2](https://user-images.githubusercontent.com/74096730/117139443-8b6ba580-adac-11eb-85ca-8394ef58b746.png)
+![scherm-3](https://user-images.githubusercontent.com/74096730/117139447-8c9cd280-adac-11eb-98e9-d9091f36a050.png)
 
 ##  Contributers
+Judith Koelewijn
