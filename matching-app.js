@@ -22,9 +22,8 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false});
 
 app.post('/about', urlencodedParser, function (req, res) {
 console.log(req.body);
-res.render('about', {qs: req.query});
+res.render('about-succes', {data: req.body});
 });
-
 
 
 
@@ -32,6 +31,11 @@ res.render('about', {qs: req.query});
 app.get('/', (req, res) => {
     res.render('index');
 });
+
+app.get('/home', (req, res) => {
+    res.render('home');
+});
+
 
 app.get('/about', (req, res) => {
     res.render('about', { title: 'Test about title' , name: 'Judith Koelewijn'});
@@ -57,3 +61,7 @@ app.listen(2910, () => {
     console.log('Server is at point 2910');
     
     });
+
+app.use(express.static('public'));
+app.use(express.static('public/images')); 
+

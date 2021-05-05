@@ -1,20 +1,40 @@
 
-    <h2>Hello World!!!</h2>
-    <h3>About!!!</h3>
-    <p>Welcome to my matching application</p>
-    
+
+<section class="introduction">
+    <h1>Welkom! </h1>
+    <p>Het is tijd om de perfecte wandelmatch te vinden : vul je gegevens in</p>
+</section>
+
+<section class="form">
     <ul>
-    <form id="contact-form" method="POST" action="/about">
-     <li> <label for="who"> Who do you want to contact?</label>
-        <input type="text" name="who" value={{who}}></li>  
-       <li> <label for="department"> What is your message?</label>
-        <input type="text" name="message" value={{message}}> </li>
-         <li><label for="age"> What is your current age?</label>
-        <input type="text" name="age" value={{age}}></li>
-        <input type="submit" value="submit" />
-      
-    
-    
-    
-    </form>
+        <form id="contact-form" method="POST" action="/about">
+            <li> <label for="who"> Wat is je naam?</label>
+                <input type="text" name="who" value={{who}}></li>
+
+            <li> <label for="department"> Op welke locatie wil je wandelen?</label>
+                <input type="text" name="message" value={{message}}> </li>
+            <li><label for="age"> Jouw favoriete interesses:</label>
+                <input type="text" name="age" value={{age}}></li>
+
+
+            <li><label for="age"> Hoe lang wil je wandelen?</label>
+
+            <section class="radiobuttons">
+
+                <input type="radio" id="twintig" name="duur" value="20">
+            <li> <label for="twintig">20-30 minuten</label></li>
+
+            <input type="radio" id="dertig" name="duur" value="30">
+            <li> <label for="30-60">30-60 minuten</label></li>
+
+
+</section>
+
+            <input class="input-button" type="submit" value="Volgende" />
+
+
+
+
+        </form>
     </ul>
+</section>
