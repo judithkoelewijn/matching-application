@@ -12,7 +12,14 @@ Bij dit project ligt de focus op het bouwen van een feature voor een matching ap
 
 Voor het installeren van de feature moet je de volgende stappen doorlopen:
 1. De github page clonen voor het verkrijgen van de folders:
+
 ```https://github.com/judithkoelewijn/matching-application.git```
+2. NPM installeren voor de gebruikte packages:
+
+```npm install```
+3. Vervolgens het starten van de server via npm:
+
+```npm start```
 
 ##  Licensie
 
