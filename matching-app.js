@@ -1,7 +1,7 @@
 import express, { Router } from 'express';
 import expbs from 'express-handlebars';
 var app = express();
-var PORT = process.env.PORT;
+
 
 import bodyParser from 'body-parser';
 
