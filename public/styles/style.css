@@ -27,8 +27,9 @@ h1,h2 {
 
 .home-introduction {
     margin-left: 22%;
-    margin-top:30%;
-    
+    margin-top:-30%;
+    z-index: 1;
+    background-color:#ededf2;
 }
 
 
@@ -154,7 +155,7 @@ header {
 
 .succes {
     margin-left:-3%;
-    margin-top:-30%;
+    margin-top:-37%;
     background-color:#295be9;
     min-height:100vh;
     min-width: 100vw;
