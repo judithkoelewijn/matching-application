@@ -85,8 +85,8 @@ input {
 }
 
 .profilepicture {
-    max-height: 15vh;
-    max-width: 15vw;
+    max-width: 30vw;
+    max-height: 10vh;
     border-radius: 8px;
     border:5px solid #699eeb;
 }
