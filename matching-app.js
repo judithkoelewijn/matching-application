@@ -1,6 +1,7 @@
 import express, { Router } from 'express';
 import expbs from 'express-handlebars';
 var app = express();
+var PORT = process.env.PORT;
 
 import bodyParser from 'body-parser';
 
@@ -66,3 +67,6 @@ app.listen(2910, () => {
 
 app.use(express.static('public'));
 app.use(express.static('public/images'));
+
+
+

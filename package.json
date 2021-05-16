@@ -4,7 +4,9 @@
   "description": "matching application",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon matching-app.js"
+    "dev": "nodemon matching-app.js",
+    "start": "node matching-app.js"
+   
   },
   "repository": {
     "type": "git",
