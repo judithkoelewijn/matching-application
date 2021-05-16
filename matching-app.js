@@ -59,11 +59,9 @@ app.get('/home', (req, res) => {
 
 )
 
-app.listen(2910, () => {
 
-    console.log('Server is at point 2910');
-    
-    });
+
+ app.listen(process.env.PORT || 2910);
 
 app.use(express.static('public'));
 app.use(express.static('public/images'));
