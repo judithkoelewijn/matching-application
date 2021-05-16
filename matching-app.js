@@ -35,9 +35,19 @@ app.get('/match-1', (req, res) => {
     res.render('match-1');
 })
 
+app.get('/match-2', (req, res) => {
+    res.render('match-2');
+})
+app.get('/match-3', (req, res) => {
+    res.render('match-3')
+})
 app.get('/home', (req, res) => {
     res.render('home');
 });
+
+app.get('/match-succes', (req, res) => {
+    res.render('match-succes');
+})
 
 
 app.get('/about', (req, res) => {
