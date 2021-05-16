@@ -287,12 +287,22 @@ a {
     background-color: #699eeb;
     border-radius: 10px;
     margin-top: 5%;
-    padding-left: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-right: 2%;
+    
 }
 
 .match1body {
-    padding-left: 15%;
-    padding-right: 8%;
+   padding-left: 10%;
+   padding-right: 10%;
+}
+
+@media only screen and (min-width: 450px) {
+    .match1body {
+        padding-left: 15%;
+        padding-right: 15%;
+     }
 }
 
 
