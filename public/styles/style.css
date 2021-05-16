@@ -2,7 +2,7 @@ body {
     background-color:#ededf2;
     width:100vw;
     overflow-x: hidden;
-    overflow-y: hidden;
+
     padding-top:2vh;
 }
 
@@ -10,6 +10,25 @@ h1,h2 {
     font-family: 'Montserrat', sans-serif;
     font-weight:600;
     font-size:160%;
+}
+
+.home-button {
+    background-color:#295be9;
+    min-height: 4vh;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    color:white;
+    border: 1px solid #eeeeee;
+    border-radius: 10px;
+    margin-left: 5%;
+    margin-top: 4%;
+    
+}
+
+.home-introduction {
+    margin-left: 22%;
+    margin-top:30%;
+    
 }
 
 
@@ -65,7 +84,7 @@ input {
     padding-left: 4%;;
 }
 
-img {
+.profilepicture {
     max-height: 15vh;
     max-width: 15vw;
     border-radius: 8px;
@@ -120,6 +139,8 @@ header {
     font-weight: 600;
     color:#699eeb;
     border: 1px solid #eeeeee;
+    border-radius: 10px;
+    
 
 
 }
@@ -159,6 +180,12 @@ header {
 
 }
 
+.succes-button {
+    margin-left: 30%;
+    margin-top: 3%;
+    
+}
+
 .dynamisch {
     color:#b3d1fc;
     font-weight: 600;
@@ -184,6 +211,7 @@ button {
     color:#699eeb;
     border: 1px solid #eeeeee;
     margin-left: 25%;
+    margin-top: 15%;
 
 
 }
@@ -192,3 +220,53 @@ button {
     background-color:#699eeb;
     color:#eeeeee;
 }
+
+.walking {
+    height: 18vh;
+    width: 58vw;
+    margin-left: 20%;
+    margin-bottom: 10%;
+}
+
+
+/* Result of matches page: */
+
+.match-1 {
+    display:flex;
+    flex-direction: row;
+    background-color: #699eeb;
+    padding:2%;
+    margin-left:4%;
+    margin-right: 8%;
+    border-radius: 10px;
+    margin-top:5%;
+    
+}
+
+a {
+    text-decoration: none;
+}
+
+
+
+.match-1 h2 {
+    font-size: 90%;
+    color:white;
+}
+
+.match-1 ul {
+    margin-left: -7%;
+}
+
+
+.match-1-picture {
+  max-width: 30vw;
+  max-height: 10vh;
+    border-radius: 8px;
+    border:5px solid #699eeb;
+    margin-top:7%;
+}
+
+
+
+/* animation */

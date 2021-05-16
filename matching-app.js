@@ -1,5 +1,3 @@
-
-
 import express, { Router } from 'express';
 import expbs from 'express-handlebars';
 var app = express();
@@ -32,6 +30,10 @@ app.get('/', (req, res) => {
     res.render('index');
 });
 
+app.get('/match-1', (req, res) => {
+    res.render('match-1');
+})
+
 app.get('/home', (req, res) => {
     res.render('home');
 });
@@ -63,5 +65,4 @@ app.listen(2910, () => {
     });
 
 app.use(express.static('public'));
-app.use(express.static('public/images')); 
-
+app.use(express.static('public/images'));
