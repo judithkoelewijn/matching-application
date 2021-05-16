@@ -1,1 +1,1 @@
-web: node src/matching-app.js
+web: npm start
