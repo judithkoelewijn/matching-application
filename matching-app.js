@@ -1,9 +1,37 @@
 import express, { Router } from 'express';
 import expbs from 'express-handlebars';
 var app = express();
+import mongoose from 'mongoose';
+import { User } from "./models/users.js";
 
 
-import bodyParser from 'body-parser';
+
+
+// connect to MongoDB //
+const dbURI = 'mongodb+srv://newuser:test1234@clustertech.5tlhg.mongodb.net/node-tuts?retryWrites=true&w=majority';
+mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true })
+.then((result) => app.listen(3000))
+.catch((err) => console.log('error'));
+
+import bodyParser2 from 'body-parser';
+
+
+//Mongoose Routes //
+
+app.get('/add-user', (req, res) => {
+ const user = new User({
+     name: 'Judith Koelewijn',
+     location: 'Amsterdam Oost',
+     interests: 'Tennis'
+ });
+ user.save()
+ .then((result) => {
+     res.send(result)
+ })
+ .catch((err) => {
+     console.log(err);
+ });
+})
 
 
 
@@ -69,9 +97,9 @@ app.get('/home', (req, res) => {
 
 )
 
+/* App naar poort laten luisteren */
 
-
- app.listen(process.env.PORT || 2910);
+ 
 
 app.use(express.static('public'));
 app.use(express.static('public/images'));
