@@ -2,7 +2,7 @@ import express, { Router } from 'express';
 import expbs from 'express-handlebars';
 var app = express();
 import mongoose from 'mongoose';
-import { User } from "./models/users.js";
+import User from "./models/users.js";
 
 
 
@@ -10,19 +10,20 @@ import { User } from "./models/users.js";
 // connect to MongoDB //
 const dbURI = 'mongodb+srv://newuser:test1234@clustertech.5tlhg.mongodb.net/node-tuts?retryWrites=true&w=majority';
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true })
-.then((result) => app.listen(3000))
+.then((result) => app.listen(3000), console.log('connected'))
 .catch((err) => console.log('error'));
 
 import bodyParser2 from 'body-parser';
+import bodyParser from 'body-parser';
 
 
 //Mongoose Routes //
 
 app.get('/add-user', (req, res) => {
  const user = new User({
-     name: 'Judith Koelewijn',
-     location: 'Amsterdam Oost',
-     interests: 'Tennis'
+     name: 'New User',
+     location: 'Amsterdam West',
+     interests: 'Voetbal'
  });
  user.save()
  .then((result) => {
@@ -32,6 +33,27 @@ app.get('/add-user', (req, res) => {
      console.log(err);
  });
 })
+
+app.get('/all-users', (req, res) => {
+    User.find()
+    .then((result) => {
+        res.send(result);
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+});
+
+
+app.get('/single-user', (req, res) => {
+    User.findById('60a52b6d4e74872a6e304ade')
+    .then((result) => {
+        res.send(result)
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+});
 
 
 
