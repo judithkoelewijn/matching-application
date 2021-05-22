@@ -10,11 +10,15 @@ import User from "./models/users.js";
 // connect to MongoDB //
 const dbURI = 'mongodb+srv://newuser:test1234@clustertech.5tlhg.mongodb.net/node-tuts?retryWrites=true&w=majority';
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true })
-.then((result) => app.listen(3000), console.log('connected'))
+.then((result) => app.listen(process.env.PORT), console.log('connected'))
 .catch((err) => console.log('error'));
 
 import bodyParser2 from 'body-parser';
 import bodyParser from 'body-parser';
+
+
+
+app.use(express.urlencoded({ extended: true }));
 
 
 //Mongoose Routes //
@@ -54,6 +58,21 @@ app.get('/single-user', (req, res) => {
         console.log(err);
     })
 });
+
+//post handler //
+app.post('/about', (req, res) => {
+    const user = new User(req.body);
+    
+    user.save() 
+    .then((result) => {
+        res.redirect('/home');
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+    
+
+})
 
 
 
