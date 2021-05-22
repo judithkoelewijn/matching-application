@@ -1,4 +1,4 @@
-import express, { Router } from 'express';
+import express, { request, Router } from 'express';
 import expbs from 'express-handlebars';
 var app = express();
 import mongoose from 'mongoose';
@@ -7,21 +7,22 @@ import User from "./models/users.js";
 
 
 
+
 // connect to MongoDB //
 const dbURI = 'mongodb+srv://newuser:test1234@clustertech.5tlhg.mongodb.net/node-tuts?retryWrites=true&w=majority';
 mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true })
-.then((result) => app.listen(process.env.PORT), console.log('connected'))
+.then((result) => app.listen(3000), console.log('connected'))
 .catch((err) => console.log('error'));
 
 import bodyParser2 from 'body-parser';
 import bodyParser from 'body-parser';
 
-
+app.listen(process.env.PORT);
 
 app.use(express.urlencoded({ extended: true }));
 
 
-//Mongoose Routes //
+//Mongoose Routes testing //
 
 app.get('/add-user', (req, res) => {
  const user = new User({
@@ -39,7 +40,7 @@ app.get('/add-user', (req, res) => {
 })
 
 app.get('/all-users', (req, res) => {
-    User.find()
+    User.find({location:'Amsterdam'})
     .then((result) => {
         res.send(result);
     })
@@ -47,6 +48,10 @@ app.get('/all-users', (req, res) => {
         console.log(err);
     })
 });
+
+
+
+
 
 
 app.get('/single-user', (req, res) => {
@@ -59,13 +64,15 @@ app.get('/single-user', (req, res) => {
     })
 });
 
-//post handler //
-app.post('/about', (req, res) => {
+
+
+//post handler hier wordt gebruiker aangemaakt en toegevoegd aan database op basis van data uit formulier//
+app.post('/results', (req, res) => {
     const user = new User(req.body);
     
     user.save() 
     .then((result) => {
-        res.redirect('/home');
+        res.redirect('results');
     })
     .catch((err) => {
         console.log(err);
@@ -73,6 +80,25 @@ app.post('/about', (req, res) => {
     
 
 })
+
+//find matching paramater//
+//https://thecodebarbarian.com/how-find-works-in-mongoose.html//
+
+User.find({ name: 'user-test-2'}, function (err, docs) {
+    if (err) {
+        console.log(err);
+    }
+    else{
+        console.log("First function call:", docs);
+    }
+});
+
+
+
+//displaying matching users//
+
+
+
 
 
 
@@ -96,6 +122,14 @@ res.render('about-succes', {data: req.body});
 
 
 
+ 
+
+
+
+
+//routes and 404//
+
+
 app.get('/', (req, res) => {
     res.render('index');
 });
@@ -116,6 +150,10 @@ app.get('/home', (req, res) => {
 
 app.get('/match-succes', (req, res) => {
     res.render('match-succes');
+})
+
+app.get('/results', (req, res) => {
+    res.render('results');
 })
 
 
