@@ -16,6 +16,8 @@ mongoose.connect(dbURI, {useNewUrlParser: true, useUnifiedTopology: true })
 
 import bodyParser2 from 'body-parser';
 import bodyParser from 'body-parser';
+import { name } from 'ejs';
+
 
 app.listen(process.env.PORT);
 
@@ -67,6 +69,11 @@ app.get('/single-user', (req, res) => {
 
 
 //post handler hier wordt gebruiker aangemaakt en toegevoegd aan database op basis van data uit formulier//
+
+
+
+
+
 app.post('/results', (req, res) => {
     const user = new User(req.body);
     
@@ -81,25 +88,58 @@ app.post('/results', (req, res) => {
 
 })
 
+
+
+
+
 //find matching paramater//
 //https://thecodebarbarian.com/how-find-works-in-mongoose.html//
 
-User.find({ name: 'user-test-2'}, function (err, docs) {
-    if (err) {
+User.findOne().sort({ _id:-1 }).exec((err, docs)  => {
+    if(err) {
         console.log(err);
     }
-    else{
-        console.log("First function call:", docs);
+    else {
+        console.log("The latest added new user:",docs);
+        return;
     }
 });
 
 
+const allUsers = 
+
+
+
+
+
+app.get('/results', (req, res) => {
+    User.find({location: 'Amsterdam'})
+    .then((result) => {
+        res.send(result)
+    })
+    .catch((err) => {
+        console.log(err);
+    })
+});
+
+
+
+
+
+
+
+
+
+//updaten van een gebruiker//
+
+
+
+
+
+
+
 
 //displaying matching users//
-
-
-
-
 
 
 app.engine('handlebars',expbs({
