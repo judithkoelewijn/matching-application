@@ -92,6 +92,8 @@ app.post('/results', (req, res) => {
 
 
 
+
+
 //find matching paramater//
 //https://thecodebarbarian.com/how-find-works-in-mongoose.html//
 
@@ -106,23 +108,42 @@ User.findOne().sort({ _id:-1 }).exec((err, docs)  => {
 });
 
 
-const allUsers = 
+
+
+// input async function //
 
 
 
+// pagina met matchende gebruikers//
+
+ 
+
+    
 
 
-app.get('/results', (req, res) => {
-    User.find({location: 'Amsterdam'})
-    .then((result) => {
-        res.send(result)
+   
+
+    const allUsers = await User.find({});
+    console.log(allUsers);
+    const lastUser = await User.findOne().sort({ _id:-1 });
+    
+    const matches = await User.find({ location: lastUser.location })
+    console.log('matches console log:',matches);
+    
+    app.get('/results', async(req, res) => {
+        const allUsers = await User.find({});
+        const lastUser = await User.findOne().sort({ _id:-1 });
+        const matches = await User.find({ location: lastUser.location })
+        res.send(matches);
     })
-    .catch((err) => {
-        console.log(err);
-    })
-});
+
+   
+
+  
 
 
+
+    
 
 
 
