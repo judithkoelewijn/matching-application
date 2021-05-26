@@ -34,7 +34,7 @@ app.use(express.urlencoded({
 }));
 
 
-//Mongoose Routes testing //
+//Mongoose Routes testing // 
 
 app.get('/add-user', (req, res) => {
     const user = new User({
