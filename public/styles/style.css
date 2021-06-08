@@ -14,6 +14,8 @@ h2 {
     margin-right: 5%;
 }
 
+
+
 .home-button {
     background-color: #295be9;
     min-height: 4vh;
@@ -266,9 +268,27 @@ a {
     color: white;
 }
 
+.match-1 h3{
+    font-size:85%;
+    color:white;
+}
+
 .match-1 ul {
     margin-left: -7%;
+    display:flex;
+    flex-direction: column;
 }
+
+.match-1 {
+    display:flex;
+    flex-direction: row;
+}
+
+.match-1:last-of-type {
+    display:none;
+ }
+ 
+
 
 
 .match-1-picture {
@@ -276,7 +296,7 @@ a {
     max-height: 10vh;
     border-radius: 8px;
     border: 5px solid #699eeb;
-    margin-top: 7%;
+    margin-top: 10%;
 }
 
 /* kiezen van een match */
@@ -370,3 +390,81 @@ ul {
 }
 
 
+
+/* laatste gebruiker */
+
+.laatste-gebruiker {
+    display: flex;
+    flex-direction: row;
+    background-color: #699eeb;
+    padding: 2%;
+    margin-left: 4%;
+    margin-right: 8%;
+    border-radius: 10px;
+    margin-top: 5%;
+}
+
+.laatste-gebruiker h3 {
+    margin-left: -340%;
+    color:white;
+}
+
+.laatste-gebruiker2 {
+    display: flex;
+    flex-direction: row;
+    background-color: #699eeb;
+    padding: 2%;
+    margin-left: 4%;
+    margin-right: 8%;
+    border-radius: 10px;
+    margin-top: 5%;
+}
+
+
+.laatste-gebruiker2 h3 {
+    margin-left: -330%;
+    color:white;
+}
+
+
+
+
+
+
+
+.profileh2 {
+    margin-left: 5%;
+}
+
+.mybutton {
+    margin-top: 10%;
+}
+
+.mybutton button {
+    padding:3%;
+    background-color: #295be9;
+    color:white;
+    margin-left: 14%;
+}
+
+
+.updated {
+    margin-left: 5%;
+}
+
+.submitbutton {
+    padding:3%;
+    background-color: #295be9;
+    color:white;
+    border:none;
+    margin-left: 22%;  
+}
+
+
+.profileh3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 100%;
+    margin-left: 6%;
+    margin-top:10%;
+}

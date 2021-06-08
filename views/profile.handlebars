@@ -1,0 +1,28 @@
+
+<h2 class="profileh2">Jouw profiel:</h2>
+
+
+<section class="laatste-gebruiker">
+    
+    {{#each laatsteGebruiker}}
+         <ul>
+    <li>
+  <h3>{{{this.name}}}  </h3>
+ </li>
+ <li>
+     <h3>{{{this.location}}} </h3>
+ </li>
+ <li>
+     <h3>{{{this.interests}}} </h3>
+ </li>
+ </ul>
+    {{/each}}
+</section>
+
+
+<h3 class="profileh3">Wijzig je locatie naar Rotterdam:</h3>
+<form action="profile-changed" method="POST">
+    <input class="submitbutton" type="submit" name="updaten" value="Rotterdam" />
+</form>
+
+

@@ -1,0 +1,28 @@
+
+
+<h2 class="profileh2">Jouw nieuwe profiel:</h2>
+
+
+<section class="laatste-gebruiker2">
+    
+    {{#each updatedUser}}
+         <ul>
+    <li>
+  <h3>{{{this.name}}}  </h3>
+ </li>
+ <li>
+     <h3>{{{this.location}}} </h3>
+ </li>
+ <li>
+     <h3>{{{this.interests}}} </h3>
+ </li>
+ </ul>
+    {{/each}}
+</section>
+
+
+<form action="updated-matches" method="POST">
+    <input class="submitbutton" type="submit" name="newmatch" value="Nieuwe matches" />
+</form>
+
+

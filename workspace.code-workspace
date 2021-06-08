@@ -1,0 +1,22 @@
+{
+	"folders": [
+		{
+			"path": "views"
+		},
+		{
+			"path": "models"
+		},
+		{
+			"path": "matching-application"
+		},
+		{
+			"path": "public"
+		},
+		{
+			"path": "static"
+		},
+		{
+			"path": "node_modules"
+		}
+	]
+}
