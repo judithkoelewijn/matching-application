@@ -76,7 +76,7 @@ app.get('/results', async (req, res) => {
     const matches = await User.find({
         location: lastUser.location
     })
-    console.log(matches);
+    console.log('matches:',matches);
     res.render('results', {
         users: matches
 
@@ -90,7 +90,7 @@ app.get('/profile', async (req, res) => {
     const lastUser = await User.findOne().sort({
         _id: -1
     });
-    console.log(lastUser);
+    console.log('lastuser:',lastUser);
     res.render('profile', {
         laatsteGebruiker: lastUser
 
@@ -98,25 +98,19 @@ app.get('/profile', async (req, res) => {
 })
 
 
-/* new findone and update test */
 
-
-
-
-
-
+// maken van eigen post request //
 app.post('/profile-changed', async (req, res) => {
     const lastUser = await User.findOne().sort({
         _id: -1
+    }); 
+    const updateUser = await User.findOneAndUpdate({name: lastUser.name}, {location: 'Rotterdam'}, { new: true},function(err, doc){
+        if(err){
+            console.log("Something wrong when updating data!");
+        }
+    
+        console.log('consoletest new user',doc);
     });
-    const updateUser = await User.findOneAndUpdate({
-        name: lastUser.name
-    }, {
-        location: 'Rotterdam'
-    }, {
-        new: true
-    }
-    );
     res.render('profile-changed', {
         updatedUser: updateUser
         
@@ -128,19 +122,6 @@ app.post('/profile-changed', async (req, res) => {
 })
 
 
-const lastUser = await User.findOne().sort({
-    _id: -1
-});
-
-
-
-User.findOneAndUpdate({name: lastUser.name}, {location: 'Rotterdam'}, { new: true},function(err, doc){
-    if(err){
-        console.log("Something wrong when updating data!");
-    }
-
-    console.log('consoletest"',doc);
-});
 
 
 
@@ -151,30 +132,14 @@ User.findOneAndUpdate({name: lastUser.name}, {location: 'Rotterdam'}, { new: tru
 
 
 
-const updateUser = await User.findOneAndUpdate({
-    name: lastUser.name
-}, {
-    location: 'Rotterdam'
-}, {
-    new: true
-}
-);
+
+
+
 
 
 
 
 /* results when location has changed */
-
-app.post('/updated-matches', async (req, res) => {
-    const sendUser = await User.find({
-        location: updateUser.location
-    })
-    res.render('updated-matches', {
-        nieuweMatches: sendUser
-    })
-});
-
-
 
 
 
